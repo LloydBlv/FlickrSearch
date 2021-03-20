@@ -16,36 +16,15 @@ object Dependencies {
         const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     }
 
-
-    val appLibraries = arrayListOf<String>().apply {
-        add(Kotlin.stdlib)
-        add(AndroidX.appCompat)
-        add(AndroidX.coreKtx)
-        add(AndroidX.constraintLayout)
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     }
 
-}
-
-fun DependencyHandler.kapt(list: List<String>) {
-    list.forEach { dependency ->
-        add("kapt", dependency)
+    object Moshi {
+        const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+        const val adapters = "com.squareup.moshi:moshi-adapters:${Versions.moshi}"
+        const val lazyAdapter = "com.serjltt.moshi:moshi-lazy-adapters:2.2"
+        const val codgen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
     }
-}
 
-fun DependencyHandler.implementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("implementation", dependency)
-    }
-}
-
-fun DependencyHandler.androidTestImplementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("androidTestImplementation", dependency)
-    }
-}
-
-fun DependencyHandler.testImplementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("testImplementation", dependency)
-    }
 }
