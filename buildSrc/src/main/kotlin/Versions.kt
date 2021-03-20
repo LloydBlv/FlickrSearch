@@ -5,4 +5,7 @@ object Versions {
     const val coreKtx = "1.2.0"
     const val appcompat = "1.3.0-alpha01"
     const val constraintLayout = "2.0.0-beta8"
+
+    const val dagger = "2.33"
+
 }
