@@ -12,6 +12,10 @@ object Dependencies {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     }
 
+    object Dagger {
+        const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+    }
+
 
     val appLibraries = arrayListOf<String>().apply {
         add(Kotlin.stdlib)
