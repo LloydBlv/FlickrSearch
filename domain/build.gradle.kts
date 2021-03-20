@@ -4,5 +4,6 @@ plugins {
 
 
 dependencies {
-    implementation(listOf(Dependencies.Kotlin.stdlib, Dependencies.Dagger.dagger))
+    implementation(Dependencies.Kotlin.stdlib)
+    implementation(Dependencies.Dagger.dagger)
 }

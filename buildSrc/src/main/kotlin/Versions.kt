@@ -8,4 +8,8 @@ object Versions {
 
     const val dagger = "2.33"
 
+    const val retrofit = "2.9.0"
+
+    const val moshi = "1.11.0"
+
 }
