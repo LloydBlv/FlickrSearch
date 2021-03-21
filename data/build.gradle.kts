@@ -24,8 +24,24 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Retrofit.retrofit)
-    implementation(Dependencies.Moshi.moshi)
+    implementation(project(":domain"))
+    implementation(project(":core"))
+
+    /*Dagger*/
+    implementation(Dependencies.Dagger.dagger)
+    implementation(Dependencies.Dagger.Hilt.android)
+    kapt(Dependencies.Dagger.Hilt.compiler)
+
+    /*Retrofit*/
+    api(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.moshiConverter)
+
+    /*Moshi*/
+    api(Dependencies.Moshi.moshi)
     implementation(Dependencies.Moshi.lazyAdapter)
     kapt(Dependencies.Moshi.codgen)
+
+    /*Chucker*/
+    debugImplementation(Dependencies.Misc.chuckerDebug)
+    releaseImplementation(Dependencies.Misc.chuckerRelease)
 }

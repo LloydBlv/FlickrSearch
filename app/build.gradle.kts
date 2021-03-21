@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -14,6 +16,8 @@ android {
         versionCode = Config.versionCode
         versionName = Config.versionName
         testInstrumentationRunner = Config.androidTestInstrumentation
+
+        buildConfigField("String", "FLICKR_API_KEY", "\"5a2cc90782760b3a6b3eca570dfaf5c3\"")
     }
 
     buildTypes {
@@ -37,8 +41,27 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":domain"))
+    implementation(project(":core"))
+    implementation(project(":data"))
+
+    /*Kotlin*/
     implementation(Dependencies.Kotlin.stdlib)
+    implementation(Dependencies.Kotlin.coroutinesCore)
+
+    /*AndroidX*/
     implementation(Dependencies.AndroidX.appCompat)
+    implementation(Dependencies.AndroidX.fragmentKtx)
     implementation(Dependencies.AndroidX.coreKtx)
+    implementation(Dependencies.AndroidX.material)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.viewModelKtx)
+
+    /*Misc*/
+    implementation(Dependencies.Misc.timber)
+
+    /*Dagger*/
+    implementation(Dependencies.Dagger.Hilt.android)
+    implementation(Dependencies.Dagger.Hilt.viewModel)
+    kapt(Dependencies.Dagger.Hilt.compiler)
 }
