@@ -1,2 +1,2 @@
-include(":app", ":domain", "data")
+include(":core", ":app", ":domain", "data")
 rootProject.name = "FlickrSearch"
