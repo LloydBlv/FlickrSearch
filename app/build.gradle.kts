@@ -30,6 +30,10 @@ android {
         }
     }
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -56,9 +60,12 @@ dependencies {
     implementation(Dependencies.AndroidX.material)
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.viewModelKtx)
+    implementation(Dependencies.AndroidX.lifeCycleCommon)
 
     /*Misc*/
     implementation(Dependencies.Misc.timber)
+    implementation(Dependencies.Misc.viewBindingDelegate)
+    implementation(Dependencies.Misc.coil)
 
     /*Dagger*/
     implementation(Dependencies.Dagger.Hilt.android)

@@ -32,12 +32,20 @@ class SearchViewModel @Inject constructor(
             searchQuery.debounce(DEBOUNCE_TIME_IN_MILLIS)
                     .collectLatest { query ->
                         Timber.d("collectLatest(), query:[%s]", query)
+                        if (query.isEmpty()) {
+                            _uiState.value = SearchUiState.Idle
+                            return@collectLatest
+                        }
                         try {
                             _uiState.value = SearchUiState.Loading
                             val photos = withContext(ioDispatcher){
                                 searchUseCase.invoke(query)
                             }
-                            _uiState.value = SearchUiState.Success(photos)
+                            if (photos.isEmpty()) {
+                                _uiState.value = SearchUiState.EmptyResult
+                            } else {
+                                _uiState.value = SearchUiState.Success(photos)
+                            }
                         } catch (e: Exception) {
                             _uiState.value = SearchUiState.Error(e)
                         }
@@ -45,13 +53,16 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun onQueryChanged(query: String) {
+    fun onQueryChanged(query: String?) {
+        query ?: return
         searchQuery.value = query
     }
 
     sealed class SearchUiState {
         object Loading : SearchUiState()
+        object Idle : SearchUiState()
         data class Success(val photos: List<FlickrPhoto>) : SearchUiState()
+        object EmptyResult : SearchUiState()
         data class Error(val exception: Throwable) : SearchUiState()
     }
 
