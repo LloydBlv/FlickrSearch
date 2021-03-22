@@ -1,6 +1,5 @@
 package ir.zinutech.android.flickrsearch.core.extensions
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
