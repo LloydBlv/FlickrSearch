@@ -1,4 +1,4 @@
-# WeatherSample
+# FlickrSearch
 This is a sample app using Flickr API and Jetpack components (LiveData, ViewModel, ...). 
 
 
