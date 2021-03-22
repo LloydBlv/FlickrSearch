@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="photo"
+            type="ir.zinutech.android.flickrsearch.domain.features.search.models.FlickrPhoto" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/search_result_image_iv"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:imageUrl="@{photo.url}"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/search_result_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:gravity="top|start"
+            android:text="@{photo.title}"
+            app:layout_constraintStart_toEndOf="@+id/search_result_image_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/search_result_image_iv"
+            tools:text="Image name" />
+    </LinearLayout>
+</layout>

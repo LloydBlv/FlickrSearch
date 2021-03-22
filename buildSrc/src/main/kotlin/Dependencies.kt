@@ -12,6 +12,7 @@ object Dependencies {
         const val material = "com.google.android.material:material:${Versions.material}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
         const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+        const val lifeCycleCommon = "androidx.lifecycle:lifecycle-common-java8:${Versions.viewModel}"
     }
 
     object Dagger {
@@ -37,6 +38,8 @@ object Dependencies {
 
     object Misc{
         const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+        const val viewBindingDelegate = "com.github.kirich1409:viewbindingpropertydelegate:${Versions.viewBindingDelegate}"
+        const val coil = "io.coil-kt:coil:${Versions.coil}"
         const val chuckerDebug = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
         const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
     }

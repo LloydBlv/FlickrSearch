@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FlickrSearch</string>
+    <string name="search">Search</string>
+    <string name="press_on_search_button">Press on search button in the toolbar above to start searching</string>
+    <string name="something_went_wrong">Something went wrong :(</string>
+    <string name="search_has_no_result">Your search did not have any result :(</string>
 </resources>

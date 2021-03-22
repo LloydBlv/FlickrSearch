@@ -19,6 +19,8 @@ object Versions {
     const val moshi = "1.11.0"
 
     const val timber = "4.7.1"
+    const val viewBindingDelegate = "1.4.4"
+    const val coil = "1.1.1"
 
     const val chucker = "3.4.0"
 }
