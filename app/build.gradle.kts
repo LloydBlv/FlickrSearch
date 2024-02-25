@@ -77,4 +77,7 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.5.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     debugImplementation("androidx.fragment:fragment-testing:1.6.2")
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("com.willowtreeapps.assertk:assertk:0.28.0")
 }
