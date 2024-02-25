@@ -5,14 +5,12 @@ plugins {
 }
 
 android {
+    namespace = "ir.zinutech.android.flickrsearch.data"
     compileSdkVersion(Config.compileSdkVersion)
-    buildToolsVersion(Config.buildToolsVersion)
 
     defaultConfig {
         minSdkVersion(Config.minSdkVersion)
         targetSdkVersion(Config.targetSdkVersion)
-        versionCode = Config.versionCode
-        versionName = Config.versionName
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

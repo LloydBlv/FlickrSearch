@@ -6,8 +6,9 @@ plugins {
 }
 
 android {
+    namespace = "ir.zinutech.android.flickrsearch"
+
     compileSdkVersion(Config.compileSdkVersion)
-    buildToolsVersion(Config.buildToolsVersion)
 
     defaultConfig {
         applicationId = "ir.zinutech.android.flickrsearch"
@@ -32,6 +33,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        buildConfig = true
     }
 
     compileOptions {
@@ -69,6 +71,10 @@ dependencies {
 
     /*Dagger*/
     implementation(Dependencies.Dagger.Hilt.android)
-    implementation(Dependencies.Dagger.Hilt.viewModel)
     kapt(Dependencies.Dagger.Hilt.compiler)
+
+    androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 }

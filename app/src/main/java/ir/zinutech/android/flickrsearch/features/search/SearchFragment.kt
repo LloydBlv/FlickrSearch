@@ -125,6 +125,7 @@ class SearchFragment : Fragment(R.layout.fragment_search_layout) {
             SearchViewModel.SearchUiState.EmptyResult -> {
                 showEmptyResultUi()
             }
+            else -> {}
         }
 
     }
