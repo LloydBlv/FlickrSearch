@@ -13,12 +13,13 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.Interceptor.Companion.invoke
 import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class SearchViewModel @Inject constructor(
-        private val searchUseCase: SearchUseCase,
+        private val searchUseCase: dagger.Lazy<SearchUseCase>,
 ) : ViewModel() {
 
     private val searchQuery = MutableStateFlow("")
@@ -37,7 +38,7 @@ class SearchViewModel @Inject constructor(
                         }
                         try {
                             _uiState.value = SearchUiState.Loading
-                            val photos = searchUseCase.invoke(query)
+                            val photos = searchUseCase.get().invoke(query)
                             if (photos.isEmpty()) {
                                 _uiState.value = SearchUiState.EmptyResult
                             } else {
