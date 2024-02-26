@@ -47,7 +47,7 @@ class SearchViewModelTest {
   @Before
   fun setUp() {
     viewModel = SearchViewModel(
-      searchUseCase = SearchUseCase(searchRepository),
+      searchUseCase = { SearchUseCase(searchRepository) }
     )
   }
 
