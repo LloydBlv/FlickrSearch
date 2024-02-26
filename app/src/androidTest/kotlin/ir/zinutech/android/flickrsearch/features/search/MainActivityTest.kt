@@ -37,4 +37,16 @@ class MainActivityTest {
         )
         textView.check(matches(withText("Press on search button in the toolbar above to start searching")))
     }
+    @Test
+    fun testMainActivity1() {
+        val textView = onView(
+            allOf(
+                withId(R.id.search_fragment_search_guide_tv),
+                withText("Press on search button in the toolbar above to start searching"),
+                withParent(withParent(withId(R.id.main_activity_container))),
+                isDisplayed()
+            )
+        )
+        textView.check(matches(withText("Press on search button in the toolbar above to start searching")))
+    }
 }
