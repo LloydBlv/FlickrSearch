@@ -19,7 +19,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchViewModel @Inject constructor(
         private val searchUseCase: SearchUseCase,
-        @IoDispatcher val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val searchQuery = MutableStateFlow("")
@@ -38,9 +37,7 @@ class SearchViewModel @Inject constructor(
                         }
                         try {
                             _uiState.value = SearchUiState.Loading
-                            val photos = withContext(ioDispatcher){
-                                searchUseCase.invoke(query)
-                            }
+                            val photos = searchUseCase.invoke(query)
                             if (photos.isEmpty()) {
                                 _uiState.value = SearchUiState.EmptyResult
                             } else {

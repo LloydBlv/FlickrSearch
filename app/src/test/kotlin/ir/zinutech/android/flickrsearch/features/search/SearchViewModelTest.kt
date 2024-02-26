@@ -48,7 +48,6 @@ class SearchViewModelTest {
   fun setUp() {
     viewModel = SearchViewModel(
       searchUseCase = SearchUseCase(searchRepository),
-      ioDispatcher = mainDispatcherRule.testDispatcher
     )
   }
 
