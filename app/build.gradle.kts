@@ -84,8 +84,6 @@ dependencies {
 
     debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 
-//    testImplementation("com.google.dagger:hilt-android-testing:2.50")
-//    testImplementation("androidx.test:runner:1.5.2")
     testImplementation("junit:junit:4.13.2")
     testImplementation("com.willowtreeapps.assertk:assertk:0.28.0")
     testImplementation("io.mockk:mockk-android:1.13.8")

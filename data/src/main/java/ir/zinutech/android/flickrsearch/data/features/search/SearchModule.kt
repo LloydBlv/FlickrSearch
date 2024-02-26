@@ -18,9 +18,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class SearchModule {
     @Binds
-    abstract fun provideSearchRepository(searchRepositoryImpl: SearchRepositoryImpl): SearchRepository
-
-    @Binds
     abstract fun provideSearchDataMapper(searchDataMapper: SearchDataMapper): ListMapper<FlickrPhotoDto, FlickrPhoto>
 
     @Binds
