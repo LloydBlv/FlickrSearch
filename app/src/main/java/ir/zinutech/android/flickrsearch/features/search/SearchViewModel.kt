@@ -55,10 +55,10 @@ class SearchViewModel @Inject constructor(
     }
 
     sealed class SearchUiState {
-        object Loading : SearchUiState()
-        object Idle : SearchUiState()
+        data object Loading : SearchUiState()
+        data object Idle : SearchUiState()
         data class Success(val photos: List<FlickrPhoto>) : SearchUiState()
-        object EmptyResult : SearchUiState()
+        data object EmptyResult : SearchUiState()
         data class Error(val exception: Throwable) : SearchUiState()
     }
 
