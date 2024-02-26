@@ -11,20 +11,7 @@ import ir.zinutech.android.flickrsearch.core.extensions.inflater
 import ir.zinutech.android.flickrsearch.databinding.ItemSearchResultLayoutBinding
 import ir.zinutech.android.flickrsearch.domain.features.search.models.FlickrPhoto
 
-class SearchAdapter : ListAdapter<FlickrPhoto, SearchAdapter.ViewHolder>(DIFF_UTIL) {
-
-    companion object {
-        private val DIFF_UTIL = object : DiffUtil.ItemCallback<FlickrPhoto>() {
-            override fun areItemsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
-                return oldItem.title == newItem.title &&
-                        oldItem.url == newItem.url
-            }
-        }
-    }
+class SearchAdapter : ListAdapter<FlickrPhoto, SearchAdapter.ViewHolder>(SearchItemDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.create(parent)
