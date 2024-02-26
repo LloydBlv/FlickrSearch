@@ -16,7 +16,7 @@ android {
         targetSdkVersion(Config.targetSdkVersion)
         versionCode = Config.versionCode
         versionName = Config.versionName
-        testInstrumentationRunner = Config.androidTestInstrumentation
+        testInstrumentationRunner = "ir.zinutech.android.flickrsearch.CustomTestRunner"
 
         buildConfigField("String", "FLICKR_API_KEY", "\"5a2cc90782760b3a6b3eca570dfaf5c3\"")
     }
@@ -75,10 +75,17 @@ dependencies {
 
     androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
     androidTestImplementation("androidx.test:runner:1.5.2")
+
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
+
     debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 
+//    testImplementation("com.google.dagger:hilt-android-testing:2.50")
+//    testImplementation("androidx.test:runner:1.5.2")
     testImplementation("junit:junit:4.13.2")
     testImplementation("com.willowtreeapps.assertk:assertk:0.28.0")
     testImplementation("io.mockk:mockk-android:1.13.8")
