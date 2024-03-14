@@ -13,8 +13,7 @@ import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.IntoSet
 import dagger.multibindings.Multibinds
 import ir.zinutech.android.flickrsearch.data.core.util.FlickrInterceptor
-import ir.zinutech.android.flirckrsearch.core.di.DaggerSet
-import ir.zinutech.android.flirckrsearch.core.di.IsMainLooper
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.IsMainLooper
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -57,9 +56,9 @@ abstract class NetModule {
         @Provides
         @Singleton
         fun provideOkHttpClient(
-                interceptors: DaggerSet<Interceptor>,
-                @IsMainLooper isLoopingOnMainLooper: Boolean,
-                @NetworkInterceptor networkInterceptors: DaggerSet<Interceptor>
+            interceptors: DaggerSet<Interceptor>,
+            @IsMainLooper isLoopingOnMainLooper: Boolean,
+            @NetworkInterceptor networkInterceptors: DaggerSet<Interceptor>
         ): OkHttpClient {
             if (isLoopingOnMainLooper) {
                 throw IllegalStateException("HTTP client initialized on main thread.")

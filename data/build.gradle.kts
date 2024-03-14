@@ -23,7 +23,6 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(project(":core"))
 
     /*Dagger*/
     implementation(Dependencies.Dagger.dagger)

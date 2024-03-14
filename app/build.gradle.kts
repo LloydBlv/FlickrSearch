@@ -48,8 +48,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":domain"))
-    implementation(project(":core"))
-    implementation(project(":data"))
+    runtimeOnly(project(":data"))
 
     /*Kotlin*/
     implementation(Dependencies.Kotlin.stdlib)

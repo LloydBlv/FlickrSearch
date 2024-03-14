@@ -1,4 +1,4 @@
-package ir.zinutech.android.flirckrsearch.core.di
+package ir.zinutech.android.flickrsearch.domain.features.search.annotations
 
 import javax.inject.Qualifier
 

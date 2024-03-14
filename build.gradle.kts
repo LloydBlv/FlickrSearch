@@ -7,6 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath ("com.savvasdalkitsis:module-dependency-graph:0.10")
         classpath("com.github.ben-manes:gradle-versions-plugin:0.51.0")
         classpath(GradlePlugins.android)
         classpath(GradlePlugins.kotlin)
@@ -20,7 +21,7 @@ allprojects {
         jcenter()
     }
     apply(plugin = "com.github.ben-manes.versions")
-//    apply(com.github.benmanes.gradle.versions.VersionsPlugin())
+    apply(plugin = "com.savvasdalkitsis.module-dependency-graph")
     fun isNonStable(version: String): Boolean {
         val stableKeyword =
             listOf("RELEASE", "FINAL", "GA").any { version.uppercase().contains(it) }

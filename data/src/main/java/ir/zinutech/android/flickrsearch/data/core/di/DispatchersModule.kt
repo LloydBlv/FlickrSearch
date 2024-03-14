@@ -1,12 +1,17 @@
-package ir.zinutech.android.flirckrsearch.core.di
+package ir.zinutech.android.flickrsearch.data.core.di
 
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.DefaultDispatcher
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.IoDispatcher
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.MainDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import javax.inject.Qualifier
 
 @Module
+@InstallIn(SingletonComponent::class)
 object DispatchersModule {
     @DefaultDispatcher
     @Provides
@@ -22,14 +27,3 @@ object DispatchersModule {
 }
 
 
-@Retention(AnnotationRetention.BINARY)
-@Qualifier
-annotation class DefaultDispatcher
-
-@Retention(AnnotationRetention.BINARY)
-@Qualifier
-annotation class IoDispatcher
-
-@Retention(AnnotationRetention.BINARY)
-@Qualifier
-annotation class MainDispatcher

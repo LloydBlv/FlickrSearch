@@ -6,12 +6,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.zinutech.android.flickrsearch.BuildConfig
-import ir.zinutech.android.flirckrsearch.core.di.DispatchersModule
-import ir.zinutech.android.flirckrsearch.core.di.IsMainLooper
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.IsMainLooper
 import javax.inject.Named
 
 
-@Module(includes = [DispatchersModule::class])
+@Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
     @Provides

@@ -1,8 +1,8 @@
 package ir.zinutech.android.flickrsearch.data.features.search
 
+import ir.zinutech.android.flickrsearch.domain.features.search.annotations.IoDispatcher
 import ir.zinutech.android.flickrsearch.domain.features.search.models.FlickrPhoto
 import ir.zinutech.android.flickrsearch.domain.features.search.repositories.SearchRepository
-import ir.zinutech.android.flirckrsearch.core.di.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
